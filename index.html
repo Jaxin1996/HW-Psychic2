@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+       <meta charset="UTF-8">
+       <title>Psychic Game</title>
+    </head>
+    <body>
+
+        <h1>This computer is psychic!</h1>
+
+        <body>
+            <p>
+                Press any key to begin playing. You have to correctly determine the computers letter. If you win you're psychic!
+            </p>
+            <div id="game">
+
+            </div>
+        </body>
+
+        <script type="text/javascript">
+            
+            var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o","p", "q", "r", "s", "t", "u", "v", "w" , "x", "y", "z",]
+
+            var wins = 0;
+            var losses = 0;
+
+            document.onkeyup = function(event) {
+
+                var userGuess = event.key;
+
+                var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+                if ((userGuess === computerGuess)) {
+                    alert("Youre psychic!")
+                    document.querySelector("#game").innerHTML = "You chose: " + userGuess + ". The computer chose: " +computerGuess;
+                } 
+
+                if ((userGuess != computerGuess)) {
+                    alert("Looks like youre not psychic.")
+                    document.querySelector("#game").innerHTML = "You chose: " + userGuess + ". The computer chose: " +computerGuess;
+                }
+                
+
+            }
+
+        </script>
+
+    </body>
+    
+</html>
